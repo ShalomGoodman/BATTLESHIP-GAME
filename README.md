@@ -22,6 +22,7 @@ The file explorer is accessible using the button in left corner of the navigatio
  - As the computer, it will do the same automatically.
  - As the player, you will be able to reset the game at anytime to get a clean slate and restart the game.
  - As a player, you will be able to attack any position on the board and know if you hit the opponents ship or not by seeing a **red box** or a **X box** indecating "Hit" or "Miss".
+ - As the computer, it will be able to make random guesses on the board to try and sink your ships.
  - As a player, you will know when the game is over my seeing a message saying who won by sinking all the ships first.
 
 #### Stretch Goals

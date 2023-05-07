@@ -11,10 +11,6 @@ If I find time towards the end of week, I would like for the computer player to 
 I have chosen Figma to mockup my game in its entirety to accuretly represent how my game will look and function in real life using the Prototype feature.
 The mockup can be accessed by clicking [Here](https://www.figma.com/proto/rMsr7wH4sejv7vLemCtTaS/Battleship-Game-Mockups?page-id=0:1&type=design&node-id=5-204&viewport=3659,2329,0.77&scaling=scale-down&starting-point-node-id=5:204)
 
-## Create files and folders
-
-The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the **New file** button in the file explorer. You can also create folders by clicking the **New folder** button.
-
 ## User Stories
 
 #### MVP Goals

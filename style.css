@@ -56,7 +56,6 @@ user-select: none;
   user-select: none;
 }
 .two:hover {
-  background-color: rgb(124, 124, 124);
   border: 5px solid rgb(0, 0, 0);
 }
 
@@ -68,7 +67,6 @@ padding: 10px;
 user-select: none;
 }
 .three:hover {
-  background-color: rgb(124, 124, 124);
   border: 5px solid rgb(0, 0, 0);
 }
 .three-2 { grid-area: three-2;
@@ -78,7 +76,6 @@ user-select: none;
   padding: 10px;
 }
 .three-2:hover {
-  background-color: rgb(124, 124, 124);
   border: 5px solid rgb(0, 0, 0);
 }
 
@@ -191,7 +188,7 @@ user-select: none;
   cursor: pointer;
 }
 .player-board > div {
-  background-color: rgb(188, 188, 188);
+  background-color: #bcbcbc;
   border: 2px solid rgb(0, 0, 0);
   font-size: 80px;
   text-align: center;
@@ -200,11 +197,6 @@ user-select: none;
   display: flex;
   cursor: pointer;
 }
-
-/* .player-board > div:hover {
-  background-color: rgb(124, 124, 124);
-  border: 5px solid rgb(0, 0, 0);
-} */
 .computer-board > div:hover {
   background-color: rgb(124, 124, 124);
   border: 5px solid rgb(0, 0, 0);

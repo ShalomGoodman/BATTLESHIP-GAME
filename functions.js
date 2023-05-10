@@ -1,5 +1,6 @@
 // Creates and Initializes the game board.
 function createBoard() {
+  console.log("test")
     for (let row = 0; row < boardSize; row++) {
       const currentRow = [];
     

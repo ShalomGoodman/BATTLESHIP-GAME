@@ -3,12 +3,12 @@ let play = document.getElementsByClassName("play");
 let reset = document.getElementsByClassName("reset")[0];
 let two = document.querySelector(".two");
 let three = document.querySelector(".three");
-let threeTwo = document.getElementsByClassName("three-2");
-let four = document.getElementsByClassName("four");
-let rotate = document.getElementsByClassName("rotate");
-let playerBoard = document.getElementsByClassName("player-board");
-let computerBoard = document.getElementsByClassName("computer-board");
-const el = document.getElementsByClassName("player-board")[0];
+let threeTwo = document.querySelector(".three-2");
+let four = document.querySelector(".four");
+let rotate = document.getElementsByClassName(".rotate");
+let playerBoard = document.getElementsByClassName(".player-board");
+let computerBoard = document.getElementsByClassName(".computer-board");
+const el = document.getElementsByClassName(".player-board")[0];
 
 reset.addEventListener('click', function () {
   location.reload();
@@ -54,7 +54,7 @@ three.addEventListener('click', function () {
   } else {
     alert("You've already placed this ship!");
 }});
-
+console.log(threeTwo)
 threeTwo.addEventListener('click', function () {
   hold = 3.5;
   let button = threeTwo;
@@ -83,6 +83,7 @@ four.addEventListener('click', function () {
 
 // Agregation of functions for Game Start
 function startGame() {
+  console.log("Game Started");
   createBoard();
   makeShips();
   placeShips();

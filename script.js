@@ -101,6 +101,9 @@ play[0].addEventListener('click', function () {
   // }
 });
 
+setInterval(function () {
+  status.innerText = "Playing...";
+}, 5000);
  
 
 // Agregation of functions for Game Start

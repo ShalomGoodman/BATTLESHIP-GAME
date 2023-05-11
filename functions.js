@@ -83,7 +83,11 @@ function placeShips() {
                   computerShipArray.push(...newShipPositions2);
               } else {
                   isOverlap = true;
-}}}}}
+}}}}
+if (computerShipArray.length > 12) {
+  location.reload();
+}}
+
 
 
 // Shows the phantoms of the ships on the player's board during hover.
@@ -199,10 +203,6 @@ function computerTurn() {
           let hit = document.getElementById(coordinate);
           hit.style.backgroundColor = "#ff0000";
           hitSound.play();
-          if (checkGameOver() === true) {
-            setTimeout(alert("You lose!"), 500);
-          }
-          break;
         }
       }
     
@@ -230,8 +230,7 @@ function checkShipHit(ship, coordinate) {
   
 function checkShipSunk(i) {
   if (computerShips[i].hits === computerShips[i].size) {
-    status.innerText = "Ship Sunk!", 2000;
-    setTimeout(status.innerText = "Playing...", 2000);
+    status.innerText = "Ship Sunk!";
     computerShips[i].sunk = true;
   }
 };
@@ -251,7 +250,7 @@ function checkGameOver() {
       
   return true;
 } else if (computerShipsDown === 4) {
-  status.innertext = "Game Over! You win!";
+  console.log("Game Over! You win!");
   return true;
 }}
   

@@ -1,27 +1,54 @@
-# Battleship!
+# Battleship
 
-## Project Description
+## Description
+This is a simple battleship game that can be played in the browser. The game is played by one player. The boards are 8x8 grids. The player has 4 ships of different lengths. The ships are placed on the board by the player. The player take turns guessing where the computers ships are. The first player to sink all of the ships wins.
 
-For my Project 1 assignment, I would like to create a virtual Battleship game where the user would play againsed the computer using the browser window. This will be developed using HTML & CSS for the frontend, and Javascript for the backend.
-If I find time towards the end of week, I would like for the computer player to be powered by AI ([open sourcse battleship AI](https://github.com/billmei/battleboat/blob/gh-pages/js/battleboat.js)) or [ChatGPT](https://chat.openai.com/)!
+## Technologies Used
+* HTML
+* CSS
+* JavaScript
 
+## Getting Started
+[Click here](https://stellular-mochi-d60cb2.netlify.app/) to play the game.
 
-## Figma Mockup
+## Next Steps
+* Fix Bugs
+* Add an AI opponent
 
-I have chosen Figma to mockup my game in its entirety to accuretly represent how my game will look and function in real life using the Prototype feature.
-The mockup can be accessed by clicking [Here](https://www.figma.com/proto/rMsr7wH4sejv7vLemCtTaS/Battleship-Game-Mockups?page-id=0:1&type=design&node-id=5-204&viewport=3659,2329,0.77&scaling=scale-down&starting-point-node-id=5:204)
+## Screenshots
+![Wireframe](2023-05-11_17-45-49.png)
+![Gameplay](2023-05-11_17-46-34.png)
 
-## User Stories
+## Code Examples
+```javascript
+function checkForWin() {
+  if (playerShipsSunk === 4) {
+    alert('You win!');
+    resetGame();
+  } else if (computerShipsSunk === 4) {
+    alert('You lose!');
+    resetGame();
+  }
+}
+```
 
-#### MVP Goals
- - As a player, you can choose your desired boats and place them wherever you want on the 8x8 grid either virtically or horizantaly.
- - As the computer, it will do the same automatically.
- - As the player, you will be able to reset the game at anytime to get a clean slate and restart the game.
- - As a player, you will be able to attack any position on the board and know if you hit the opponents ship or not by seeing a **red box** or a **X box** indecating "Hit" or "Miss".
- - As the computer, it will be able to make random guesses on the board to try and sink your ships.
- - As a player, you will know when the game is over my seeing a message saying who won by sinking all the ships first.
+## Motivation
+I wanted to create a game that I could play in the browser. I also wanted to practice using JavaScript to manipulate the DOM.
 
-#### Stretch Goals
+## Project Management
+[Click here](https://malachite-silene-cb6.notion.site/b33cce046a004bb0bcb45df34ffcf784?v=df5ec50bb5c74d9c9773fefac9ac2d6f) to view the Notion board used to manage this project.
 
- - Integrate either the AI algerithym mentioned above, or use ChatGPT as the opponent.
- - Some fun/cool animations for all gameplay.
+## How to Play
+1. In the controls section, click on a ship to select it.
+2. Click on a square on the board to place the ship.
+3. Repeat steps 1 and 2 until all ships are placed.
+4. Click on a square on the computer's board to guess where the computer's ships are.
+5. Repeat step 4 until all of the computer's ships are sunk.
+
+## Bugs
+* The player can place ships on top of each other.
+* The player can place ships off the board.
+* The player can guess the same square more than once.
+* The player can still place ships after the game started.
+* The player can still guess after the game is over.
+* The computer can somtimes hit your ship and will look like a miss (dont worry, its still concidered a hit).

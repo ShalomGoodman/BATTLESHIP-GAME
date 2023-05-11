@@ -12,6 +12,7 @@ const el = document.getElementsByClassName("player-board")[0];
 
 
 
+
 reset.addEventListener('click', function () {
   location.reload();
 });

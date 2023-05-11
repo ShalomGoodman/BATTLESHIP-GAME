@@ -250,7 +250,7 @@ function checkGameOver() {
       
   return true;
 } else if (computerShipsDown === 4) {
-  console.log("Game Over! You win!");
+  alert("Game Over! You win!");
   return true;
 }}
   

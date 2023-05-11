@@ -14,7 +14,8 @@
     "game-container"
     "Controls";
     height: 99vh;
-  background-color: rgb(119, 153, 255);
+  background-image: url("sea.gif");
+  background-size: cover;
 }
 
 .Controls {  display: grid;
@@ -32,7 +33,7 @@
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   align-items: center;
-  background-color: #fff;
+  background-color: #ffffff;
   height: 130px;
   padding: 15px;
 }
@@ -97,6 +98,7 @@ user-select: none;
     ". head head head ."
     ". player-board . computer-board .";
   grid-area: game-container;
+
 }
 
 .player-board {grid-area: player-board;}

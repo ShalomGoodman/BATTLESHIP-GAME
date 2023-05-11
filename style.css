@@ -14,7 +14,8 @@
     "game-container"
     "Controls";
     height: 99vh;
-  background-color: rgb(119, 153, 255);
+  background-image: url("sea.gif");
+  background-size: cover;
 }
 
 .Controls {  display: grid;
@@ -32,7 +33,7 @@
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   align-items: center;
-  background-color: #fff;
+  background-color: #ffffff;
   height: 130px;
   padding: 15px;
 }
@@ -48,65 +49,44 @@ user-select: none;
   transform: scale(1.1);
 }
 
-.two { grid-area: two;
+.two { grid-area: two;}
+
+.three { grid-area: three;}
+
+.three-2 { grid-area: three-2;}
+
+.four { grid-area: four;}
+
+.two, .three, .three-2, .four {
   background-color: rgb(190, 190, 190);
   border-radius: 10px;
   font-size: 80px;
   padding: 10px;
   user-select: none;
 }
-.two:hover {
-  border: 5px solid rgb(0, 0, 0);
-}
 
-.three { grid-area: three;
-background-color: rgb(190, 190, 190);
-border-radius: 10px;
-font-size: 80px;
-padding: 10px;
-user-select: none;
-}
-.three:hover {
-  border: 5px solid rgb(0, 0, 0);
-}
-.three-2 { grid-area: three-2;
-  background-color: rgb(190, 190, 190);
-  border-radius: 10px;
-  font-size: 80px;
-  padding: 10px;
-}
-.three-2:hover {
-  border: 5px solid rgb(0, 0, 0);
-}
-
-.four { grid-area: four;
-  background-color: rgb(190, 190, 190);
-  border-radius: 10px;
-  font-size: 80px;
-  padding: 10px;
-}
-.four:hover {
-  background-color: rgb(124, 124, 124);
+.two:hover, .three:hover, .three-2:hover, .four:hover {
   border: 5px solid rgb(0, 0, 0);
 }
 
 .play { grid-area: play;
-  background-color: rgb(104, 255, 121);
+  background-color: #68ff79;
   border-radius: 10px;
   padding: 10px;
-  user-select: none;}
+  user-select: none;
+}
   .play:hover {
-    background-color: rgb(60, 255, 0);
+    background-color: #3cff00;
   }
 
 .reset { grid-area: reset;
-  background-color: rgb(255, 95, 95);
+  background-color: #ff5f5f;
   border-radius: 10px;
   padding: 10px;
   user-select: none;
 }
 .reset:hover {
-  background-color: rgb(255, 0, 0);
+  background-color: #ff0000;
 }
 
 .game-container {  display: grid;
@@ -118,9 +98,14 @@ user-select: none;
     ". head head head ."
     ". player-board . computer-board .";
   grid-area: game-container;
+
 }
 
-.player-board {
+.player-board {grid-area: player-board;}
+
+.computer-board {grid-area: computer-board;}
+
+.player-board, .computer-board {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -135,36 +120,10 @@ user-select: none;
     ". . . . . . . ."
     ". . . . . . . ."
     ". . . . . . . .";
-  grid-area: player-board;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
   max-width: 400px;
   max-height: 400px;
   margin-bottom: 0px;
-}
-
-.computer-board {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". . . . . . . ."
-    ". . . . . . . ."
-    ". . . . . . . ."
-    ". . . . . . . ."
-    ". . . . . . . ."
-    ". . . . . . . ."
-    ". . . . . . . ."
-    ". . . . . . . .";
-  grid-area: computer-board;
-  background-color: rgb(255, 255, 255);
-  max-width: 400px;
-  max-height: 400px;
-  margin-bottom: 0px;
-  /* justify-content: center;
-  align-items: center;
-  justify-items: center; */
 }
 
 .head { grid-area: head;
@@ -177,19 +136,9 @@ user-select: none;
   padding-bottom: 10px;
 }
 
-.computer-board > div {
-  background-color: rgb(188, 188, 188);
-  border: 2px solid rgb(0, 0, 0);
-  font-size: 80px;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  cursor: pointer;
-}
-.player-board > div {
+.computer-board > div, .player-board > div {
   background-color: #bcbcbc;
-  border: 2px solid rgb(0, 0, 0);
+  border: 2px solid #000000;
   font-size: 80px;
   text-align: center;
   align-items: center;
@@ -197,13 +146,8 @@ user-select: none;
   display: flex;
   cursor: pointer;
 }
+
 .computer-board > div:hover {
   background-color: rgb(124, 124, 124);
   border: 5px solid rgb(0, 0, 0);
 }
-
-
-/* .player-board:hover {
-  background-color: rgb(124, 124, 124);
-  border: 5px solid rgb(0, 0, 0);
-} */

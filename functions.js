@@ -28,7 +28,7 @@ function createBoard() {
 class Ship {
     constructor(size, a, b, ) {
         this.size = size; // Size of the ship (e.g. 2 = ["A1", "A2"]).
-        this.sunk = false; // Will dictate the color of the ship and update score.
+        this.sunk = false; // Will dictate if the game is over or not.
         this.position = [a, b]; // Array of coordinates (e.g. ["A1", "A2", "A3"]).
         this.hits = 0; // Number of hits on the ship.
 }};
@@ -86,10 +86,10 @@ function placeShips() {
                   isOverlap = true;
 }}}}
 if (computerShipArray.length > 12) {
-  location.reload();
+  location.reload(); // Ha Ha Ha, I'm a genius. This is the most hacky way to fix the bug where if it added more than 12 ships, (1/10 times), it just reloads the page
 }};
 
-/*------Ship Hover Effect--------*/ // Shows the phantoms of the ships on the player's board during hover.
+/*------Ship Hover Effect Not Working--------*/ // Shows the phantoms of the ships on the player's board during hover.
 // function shipHoverEffect(el) {
 //   if (buttonClicked === false) {
 //   el.addEventListener('mouseover', function (e) {
@@ -155,7 +155,7 @@ if (computerShipArray.length > 12) {
 // makes the ship buttons look like they were clicked.
 
 function buttonClickedEffect(button) {
-    button.style.backgroundColor = "#525252";
+    button.style.backgroundColor = "rgba(82, 82, 82, 0.400)";
     button.style.border = "5px solid #000000";
 }; // makes the ship buttons look like they were clicked.
 

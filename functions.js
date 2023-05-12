@@ -185,9 +185,10 @@ function hit(e) {
     }
   setTimeout(computerTurn, 500);
     }
+
+    let computerMoves = [];
 function computerTurn() {
       let x, y, coordinate, hit;
-      let computerMoves = [];
       do {
         x = Math.floor(Math.random() * 8);
         y = Math.floor(Math.random() * 8);
@@ -195,7 +196,7 @@ function computerTurn() {
       } while (computerMoves.includes(coordinate));
     
       computerMoves.push(coordinate);
-      hit = false;
+       hit = false;
     
       for (let i = 0; i < playerShips.length; i++) {
         hit = checkShipHit(playerShips[i], coordinate);
@@ -203,6 +204,7 @@ function computerTurn() {
           let hit = document.getElementById(coordinate);
           hit.style.backgroundColor = "#ff0000";
           hitSound.play();
+          break;
         }
       }
     

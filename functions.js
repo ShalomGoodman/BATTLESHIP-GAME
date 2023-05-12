@@ -1,8 +1,9 @@
-let playerShipArray = [];
-let computerShipArray = [];
-let hitSound = new Audio("mi_explosion_03_hpx.mp3");
-let missSound = new Audio("splash-by-blaukreuz-6261.mp3");
-let status = document.getElementById("status");
+let playerShipArray = []; // Array of the player's ships for debugging purposes
+let computerShipArray = []; // Array of the computer's ships for debugging purposes
+let hitSound = new Audio("mi_explosion_03_hpx.mp3"); // Sound for when a ship is hit.
+let missSound = new Audio("splash-by-blaukreuz-6261.mp3"); // Sound for when a shot misses.
+let status = document.getElementById("status"); // Updates the frontend with the status of the game. (Such as "Playing...", Ship Sunk, etc.")
+let computerMoves = []; // Array of the computer's moves for debugging purposes
 // Creates and Initializes the game board.
 function createBoard() {
     for (let row = 0; row < boardSize; row++) {
@@ -30,7 +31,7 @@ class Ship {
         this.sunk = false; // Will dictate the color of the ship and update score.
         this.position = [a, b]; // Array of coordinates (e.g. ["A1", "A2", "A3"]).
         this.hits = 0; // Number of hits on the ship.
-}}
+}};
 
 // Makes ships for both the player and computer.
 function makeShips() {
@@ -86,11 +87,9 @@ function placeShips() {
 }}}}
 if (computerShipArray.length > 12) {
   location.reload();
-}}
+}};
 
-
-
-// Shows the phantoms of the ships on the player's board during hover.
+/*------Ship Hover Effect--------*/ // Shows the phantoms of the ships on the player's board during hover.
 // function shipHoverEffect(el) {
 //   if (buttonClicked === false) {
 //   el.addEventListener('mouseover', function (e) {
@@ -150,11 +149,15 @@ if (computerShipArray.length > 12) {
 
 // }
 
+
+
+
 // makes the ship buttons look like they were clicked.
+
 function buttonClickedEffect(button) {
     button.style.backgroundColor = "#525252";
     button.style.border = "5px solid #000000";
-};
+}; // makes the ship buttons look like they were clicked.
 
 function checkAllShipsPlaced() {
     for (let i = 0; i < playerShips.length; i++) {
@@ -163,9 +166,8 @@ function checkAllShipsPlaced() {
       }
     }
     console.log(true);
-};
+}; // checks if all ships have been placed. If not, gameplay cannot begin
 
-/*-------BUG-------*/
 function hit(e) {
     let x = e.target.id;
     if (computerShipArray.includes(x)) {
@@ -183,10 +185,9 @@ function hit(e) {
       e.target.text = "X";
       missSound.play();
     }
-  setTimeout(computerTurn, 500);
-    }
+    setTimeout(computerTurn, 500); // Add a delay to the computer's turn for dramatic effect.
+}; // checks if the player's shot hit a ship or not. If it did, the ship's hits are incremented and the ship is checked for sinking. If not, the square turns white and an X is placed on it.
 
-    let computerMoves = [];
 function computerTurn() {
       let x, y, coordinate, hit;
       do {
@@ -196,8 +197,7 @@ function computerTurn() {
       } while (computerMoves.includes(coordinate));
     
       computerMoves.push(coordinate);
-       hit = false;
-    
+      hit = false;
       for (let i = 0; i < playerShips.length; i++) {
         hit = checkShipHit(playerShips[i], coordinate);
         if (hit === true) {
@@ -214,28 +214,23 @@ function computerTurn() {
         miss.style.fontSize = "30px";
         miss.innerHTML = "X";
         missSound.play();
-      }
-    }
-    
-
-
+}}; // the computer's turn. A random coordinate is generated and checked against the player's ships. If it hits, the square turns red. If not, the square turns white and an X is placed on it.
 
 function checkShipHit(ship, coordinate) {
     for (let i = 0; i < ship.position.length; i++) {
       if (ship.position[i] === coordinate) {
         ship.hits = ship.hits + 1;
         return true;
-      }
-    }
+      }}
     return false;
-}
+}; // checks if the computer's shot hit a ship or not. 
   
 function checkShipSunk(i) {
   if (computerShips[i].hits === computerShips[i].size) {
     status.innerText = "Ship Sunk!";
     computerShips[i].sunk = true;
   }
-};
+}; // checks if a ship has been sunk. If it has, the ship's sunk property is set to true and the status is updated.
   
   
 function checkGameOver() {
@@ -249,14 +244,13 @@ function checkGameOver() {
     }}
 
     if (playerShipsDown === 4) {
-      
-  return true;
-} else if (computerShipsDown === 4) {
-  alert("Game Over! You win!");
-  return true;
-}}
+      alert("Game Over! You lose!");
+      return true;
+    } else if (computerShipsDown === 4) {
+      alert("Game Over! You win!");
+      return true;
+}}; // checks if the game is over. If all of the player's ships are sunk, the player loses. If all of the computer's ships are sunk, the player wins.
   
-// 
 function playerShipPlacement(el) {
   el.addEventListener('click', function (e) {
     if (hold === 2) {
@@ -315,6 +309,10 @@ function playerShipPlacement(el) {
         perp.style.backgroundColor = "#5A5A5A";
         perp1.style.backgroundColor = "#5A5A5A";
         perp2.style.backgroundColor = "#5A5A5A";
-    }})
-  };
-  
+}})};
+/* 
+This function takes the desired ship coordinate as an arguments and splits it to get the row and column.
+It then uses the row and column to set the ship's position property using charCodes.
+It also pushes the ship's position to the playerShipArray.
+It then changes the color of the ship's position on the board to grey.
+*/

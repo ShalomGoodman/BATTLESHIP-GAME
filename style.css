@@ -104,7 +104,8 @@ user-select: none;
     ". head head head ."
     ". player-board . computer-board .";
   grid-area: game-container;
-
+  justify-items: center;
+  align-items: center;
 }
 
 .player-board {grid-area: player-board;}
@@ -130,6 +131,8 @@ user-select: none;
   max-width: 400px;
   max-height: 400px;
   margin-bottom: 0px;
+  width: 100%;
+  height: 100%;
 }
 
 .head { grid-area: head;

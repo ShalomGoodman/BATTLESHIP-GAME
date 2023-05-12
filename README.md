@@ -9,7 +9,7 @@ This is a simple battleship game that can be played in the browser. The game is 
 * JavaScript
 
 ## Getting Started
-[Click here](https://stellular-mochi-d60cb2.netlify.app/) to play the game.
+[Click here](https://battleship-shalomgman.netlify.app/) to play the game.
 
 ## Next Steps
 * Fix Bugs
